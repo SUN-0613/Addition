@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Calculation</title>
+
+        <link rel="stylesheet" href="Calc.css" />
+        <script type="text/javascript" src="Calc.js"></script>
+
+    </head>
+
+    <body>
+
+        <p>
+            <label>
+                Input number 1:
+            </label>
+            <input type="text" id="iNum1" class="textbox" />
+        </p>
+
+        <p>
+            <label>
+                Input arithmetic operator: 
+            </label>
+            <input type="text" id="cOpe" class="textbox" />
+        </p>
+
+        <p>
+            <label>
+                Input number 2:
+            </label>
+            <input type="text" id="iNum2" class="textbox" />
+        </p>
+        
+        <p>
+            <input type="submit" value="計算" class="button" onclick="Calc()" />
+        </p>
+
+        <label id="fAnswer" />
+
+    </body>
+
+</html>

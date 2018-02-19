@@ -1,0 +1,20 @@
+body{
+    background-color: lightgray;
+}
+
+label
+{
+    display: block;
+    float: left;
+    width: 230px;
+}
+
+.textbox
+{
+    width: 150px;
+}
+
+.button
+{
+    width: 100px;
+}
