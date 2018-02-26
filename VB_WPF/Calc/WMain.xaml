@@ -1,0 +1,43 @@
+﻿<Window x:Class="WMain" x:Name="WMain" Title="Calculation" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calc"
+        mc:Ignorable="d"
+        Height="170" Width="430">
+    <Window.Resources>
+        <local:BoolToVisibleConverter x:Key="Conv" />
+    </Window.Resources>
+    <Grid >
+        <Grid.RowDefinitions>
+            <!--Border:Height="30"-->
+            <RowDefinition Height="10" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <!--Border:Width="10"-->
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="1" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Text="Input number 1" TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" />
+        <TextBlock Grid.Row="2" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Text="Input arithmetic operator" TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" />
+        <TextBlock Grid.Row="3" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Text="Input number 2" TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" />
+
+        <Button x:Name="btn_Calc" Grid.Row="4" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1" Content="Calc" Margin="50,5" />
+
+        <TextBlock Grid.Row="4" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1" Text="{Binding Path=Message}" TextAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Visibility="{Binding Path=Visible,Converter={StaticResource Conv}}" />
+
+        <TextBox Grid.Row="1" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1" Text="{Binding Path=Num1}" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+        <TextBox Grid.Row="2" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1" Text="{Binding Path=Operate}" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+        <TextBox Grid.Row="3" Grid.RowSpan="1" Grid.Column="2" Grid.ColumnSpan="1" Text="{Binding Path=Num2}" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+
+    </Grid>
+</Window>
